@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import { Header } from "react-native-elements";
+import { Header, LinearProgress } from "react-native-elements";
 import MyNotiffButton from "../../components/MyNotiffButton";
 import MyBackButton from "../../components/MyBackButton";
 import AntDesign from "react-native-vector-icons/AntDesign";
@@ -18,7 +18,7 @@ import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 const InProject = ({ navigation, route }) => {
   const data = route.params;
   return (
-    <View>
+    <ScrollView>
       <Header
         backgroundImage={data.photo_url}
         backgroundImageStyle={{ width: 500, height: 250 }}
@@ -146,17 +146,17 @@ const InProject = ({ navigation, route }) => {
                 style={{
                   color: "#FF8D1A",
                   fontSize: 14,
-                  fontFamily: "Regular",
+                  fontFamily: "NunitoBold",
                 }}
               >
                 Үйл явц
-                <SimpleLineIcons
-                  name="arrow-right-circle"
-                  color="#FF8D1A"
-                  size={15}
-                  style={{}}
-                />
               </Text>
+              <SimpleLineIcons
+                name="arrow-right-circle"
+                color="#FF8D1A"
+                size={15}
+                style={{ left: 10 }}
+              />
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -182,22 +182,138 @@ const InProject = ({ navigation, route }) => {
                 style={{
                   color: "#FF8D1A",
                   fontSize: 14,
-                  fontFamily: "Regular",
+                  fontFamily: "NunitoBold",
                 }}
               >
                 Сэтгэгдэл
-                <SimpleLineIcons
-                  name="arrow-right-circle"
-                  color="#FF8D1A"
-                  size={15}
-                  style={{}}
-                />
               </Text>
+              <SimpleLineIcons
+                name="arrow-right-circle"
+                color="#FF8D1A"
+                size={18}
+                style={{ left: 10 }}
+              />
             </View>
           </TouchableOpacity>
         </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            marginVertical: 20,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: "SemiBold",
+              color: "#3389EE",
+              fontSize: 18,
+            }}
+          >
+            ₮1,8 сая
+          </Text>
+          <Text
+            style={{
+              fontFamily: "SemiBold",
+              color: "#FF8D1A",
+              fontSize: 18,
+              left: 50,
+            }}
+          >
+            ₮10 сая
+          </Text>
+        </View>
+        <LinearProgress
+          color="#3389EE"
+          value={0.3}
+          variant={"determinate"}
+          trackColor="#FFC285"
+          style={{
+            width: 315,
+            height: 4,
+            alignSelf: "center",
+            borderRadius: 50,
+          }}
+        />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            marginVertical: 20,
+          }}
+        >
+          <View>
+            <Text
+              style={{
+                fontSize: 14,
+                fontFamily: "Regular",
+                color: "#161616",
+              }}
+            >
+              Хандивлагч
+            </Text>
+            <Text
+              style={{
+                fontFamily: "SemiBold",
+                fontSize: 24,
+                color: "#FF8D1A",
+                alignSelf: "center",
+              }}
+            >
+              42
+            </Text>
+          </View>
+          <Text
+            style={{
+              fontWeight: "300",
+              color: "#F5F5F5",
+
+              width: 5,
+              fontSize: 40,
+            }}
+          >
+            |
+          </Text>
+          <View>
+            <Text
+              style={{
+                fontSize: 14,
+                fontFamily: "Regular",
+                color: "#161616",
+              }}
+            >
+              Үлдсэн хоног
+            </Text>
+            <Text
+              style={{
+                fontFamily: "SemiBold",
+                fontSize: 24,
+                color: "#FF8D1A",
+                alignSelf: "center",
+              }}
+            >
+              {/* {data.end_date} */}
+              24
+            </Text>
+          </View>
+        </View>
+        <View
+          style={{
+            backgroundColor: "white",
+            borderRadius: 50,
+            marginVertical: 30,
+            shadowOpacity: 0.2,
+            shadowColor: "#000000",
+          }}
+        >
+          <MyButton
+            title={"Хандив өгөх"}
+            style={{ backgroundColor: "#FF8D1A" }}
+            onPress={() => navigation.navigate("PayingDetails", data)}
+          />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

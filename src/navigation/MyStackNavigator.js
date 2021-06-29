@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../../HomeScreen";
 import CharityScreen from "../Charity/screens/CharityScreen";
 import InProject from "../Charity/Project/InProject";
+import PayingDetails from "../Charity/Project/PayingDetails";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,11 @@ export default () => (
     <Stack.Screen
       name="InProject"
       component={InProject}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="PayingDetails"
+      component={PayingDetails}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>
