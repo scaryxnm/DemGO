@@ -5,6 +5,7 @@ import HomeScreen from "../../HomeScreen";
 import CharityScreen from "../Charity/screens/CharityScreen";
 import InProject from "../Charity/Project/InProject";
 import PayingDetails from "../Charity/Project/PayingDetails";
+import PaySelected from "../Charity/Project/PaySelected";
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,11 @@ export default () => (
     <Stack.Screen
       name="PayingDetails"
       component={PayingDetails}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="PaySelected"
+      component={PaySelected}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>

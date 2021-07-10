@@ -130,6 +130,7 @@ const Project = () => {
     <View style={{ backgroundColor: "#F5F5F5" }}>
       <FlatList
         data={Projects}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => <Cart data={item} />}
       />
     </View>
